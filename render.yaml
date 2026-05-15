@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: crumble-crunch-cookies
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+    healthCheckPath: /
